@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style6.css')}}">
+    <title>Register Form</title>
+
+</head>
+<body>
+
+    <div class="center">
+      <h1>Sign up</h1>
+
+      {% if error %}
+          <p style="color: red; font-weight: bold;">{{ error }}</p>
+      {% endif %}
+      
+      <form action="/register" method="POST">
+        <div class="txt_field">
+            <input type="email" id="email" required name="email">
+            <span></span>
+            <label>email</label>
+        </div>
+
+        <div class="txt_field">
+          <input type="text" id="name" required name="name">
+          <span></span>
+          <label>name</label>
+      </div>
+
+          <div class="txt_field">
+              <input type="password" id="password"required name="password">
+              <span></span>
+              <label>password</label>
+          </div>
+
+          <div class="signup_link">
+            <input type="submit" value="Sign up">
+            <p>Already have an account ? <a href="/login">Login</a></p>
+            <p>Back home: <a href="/main">Home</a></p>
+          </div>
+          </form>
+  </body>
