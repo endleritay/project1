@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file uploads</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}">
+</head>
+<body>
+    <div class="app">
+        
+        <div class="images-section">
+
+            {% for image in images%}
+            <a href="{{ url_for('serve_image', filename=image)  }}" target="_blank">
+                <img src="{{ url_for('serve_image', filename=image) }}"/>
+            </a>
+            {% endfor%}
+            
+        </div>
+        <div class="home">
+            <a href="/main2">back home</a>
+        </div>
+
+    </div>
+    
+</body>
+</html>
